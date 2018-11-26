@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawChart2);
+      google.charts.setOnLoadCallback(drawChart3);
+
+      function drawChart() {
+	// Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Mesure');
+	data.addColumn('number', 'Consomation electrique en KWh');
+        data.addRows([
+          {{data}}
+        ]);
+
+        var options = {
+          title: 'Valeurs Conso Electrique',
+          hAxis: {title: 'Mesure num.',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0},
+    	  colors: ['yellow']
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+      function drawChart2() {
+	// Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Mesure');
+	data.addColumn('number', 'Consomation gaz en m3');
+        data.addRows([
+          {{data2}}
+        ]);
+
+        var options = {
+          title: 'Valeurs Conso Gaz',
+          hAxis: {title: 'Mesure num.',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0},
+    	  colors: ['red']
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart2_div'));
+        chart.draw(data, options);
+      }
+      function drawChart3() {
+	// Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Mesure');
+	data.addColumn('number', 'Consommation eau en Litre');
+        data.addRows([
+          {{data3}}
+        ]);
+
+        var options = {
+          title: 'Valeurs Conso Eau',
+          hAxis: {title: 'Mesure num.',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0},
+    	  colors: ['blue']
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart3_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+    <div id="chart2_div" style="width: 100%; height: 500px;"></div>
+    <div id="chart3_div" style="width: 100%; height: 500px;"></div>
+  </body>
+</html>
+

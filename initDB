@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Initialisation de la BDD..."
+sqlite3 sql/mabdd.db < sql/logement.sql
+

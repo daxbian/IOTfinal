@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "Compilation du serveur parallèle d'écoute des devices"
+gcc src/serveur_device.c -lsqlite3 -o exe/serveur_device;
+gcc src/client_device.c -lsqlite3 -o exe/client_device;
+echo "Tapez par ex 'exe/client_device 127.0.0.1 25565 42' pour ajouter une mesure de 42 sur le port 25565"
+echo "Ecoute sur le port de tous les devices..."
+exe/serveur_device
+

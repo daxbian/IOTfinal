@@ -1,0 +1,68 @@
+/****************************************************************************/
+   __                                       _                                
+  / /  ___   __ _  ___ _ __ ___   ___ _ __ | |_                              
+ / /  / _ \ / _` |/ _ \ '_ ` _ \ / _ \ '_ \| __|                             
+/ /__| (_) | (_| |  __/ | | | | |  __/ | | | |_                              
+\____/\___/ \__, |\___|_| |_| |_|\___|_| |_|\__|                             
+            |___/                                                            
+                                                                _     _      
+  ___  ___ ___        _ __ ___  ___ _ __   ___  _ __  ___  __ _| |__ | | ___ 
+ / _ \/ __/ _ \ _____| '__/ _ \/ __| '_ \ / _ \| '_ \/ __|/ _` | '_ \| |/ _ \
+|  __/ (_| (_) |_____| | |  __/\__ \ |_) | (_) | | | \__ \ (_| | |_) | |  __/
+ \___|\___\___/      |_|  \___||___/ .__/ \___/|_| |_|___/\__,_|_.__/|_|\___|
+                                   |_|                                       
+
+/****************************************************************************/
+/********************** Bao Tinh Piot & Marco Longépé ***********************/
+/****************************************************************************/
+
+/********** GENERAL**********/
+/****************************/
+//INITIALISATION
+initDB.sh 			//Initialise la BD
+site.sh				//Permet de lancer la visualisation sur le site
+
+//LANCEMENT D'UN OU PLUSIEURS PROGRAMMES ADDITIONNELS
+serveurFacture.sh 	//Permet d'ajouter des factures manuellement
+serveurDevice.sh	//Permet d'ajouter des mesures en tant que device
+
+/********** FONCTIONNEMENT **********/
+/************************************/
+Tous les programmes n'ont pas besoin d'être lancés en même temps.
+Cependant, il faut bien lancer l'initialisation de la BD en premier.
+Le site permet aussi une visualisation de l'ensemble des fonctionnalités.
+Additionellement, l'utilisateur peut choisir:
+	- De lancer un second serveur pour ajouter des factures
+	- De lancer un troisième serveur pour écouter les mesures des capteurs
+
+//serveurFacture.sh 
+Compilation du serveur parallèle d'écoute des factures.
+Le serveur fork à chaque facture reçue pour traiter l'insertion.
+Ecoute sur le port 3201
+
+Exemple d'utilisation: 'exe/facture 127.0.0.1 3201 1 electricite 10'
+	-> Ajoute une facture d'électricité au logement 1 de 10 euros
+
+//serveurDevice.sh 
+Compilation du serveur parallèle d'écoute des devices
+Ecoute sur tous les ports des devices de la BDD:
+	-> 25564 et 25565 après l'initialisation de la BDD
+
+Exemple d'utilisation: 'exe/client_device 127.0.0.1 25565 999'
+	-> Ajoute une mesure de 999 sur le port 25565
+
+//site.sh 
+Compilation du site internet de visualisation
+Ecoute sur le port 8080
+
+Chargez index.html dans le dossier 'site/' manuellement pour naviguer.
+Alternativement, tapez: 'firefox site/index.html &'
+
+Le site permet de:
+	- Visualiser un pie-chart de la part de coût des factures
+	  Le graphe est mis à jour à chaque ajout de facture
+	- Afficher la consommation des factures au cours du temps
+	- Afficher l'état des capteurs
+	- Configurer les capteurs de la BDD
+
+

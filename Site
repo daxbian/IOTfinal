@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "Compilation du site internet"
+gcc src/site.c -lsqlite3 -o exe/site;
+echo "Chargez site/index.html manuellement pour naviguer ou tapez firefox site/index.html &"
+echo "Ecoute sur le port 8080..."
+exe/site 
+

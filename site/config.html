@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<h2>Creer un capteur</h2>
+
+			<form action="/action_pageAdd" method="post">
+			  ID de la piece:<br>
+			  <input type="text" name="create_id_piece" value="ID_de_la_piece">
+			  <br>
+			  Type de capteur:<br>
+			  <input type="text" name="create_type" value="Type(electricite, gaz ou eau">
+			  <br>
+			  Reference du capteur:<br>
+			  <input type="text" name="capt_ref" value="REF(ESPXXXX par ex.)">
+			  <br>
+			  Port du capteur:<br>
+			  <input type="text" name="create_port" value="Port(0-65565)">
+			  <br><br>
+			  <input type="submit" value="Ajouter ce capteur">
+			</form> 
+
+		<h2>Supprimer un capteur</h2>
+			<FORM action="/action_pageSuppr" method="post">
+				<SELECT name="capt" size="1">
+				{{choices}}
+				</SELECT>
+			  	<input type="submit" value="Supprimer ce capteur">
+			</FORM>
+	</body>
+</html>

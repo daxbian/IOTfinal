@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Include</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" src="jquery.js"></script>
+        <script src="bootstrap.min.js"></script>
+    </head>
+
+    <style>
+        .wrapper {
+            width: 15%;
+            height: 70%;
+            background: white;
+            float: left;
+            color: blue;
+        }
+        .include {
+            width: 70%;
+            margin-left: 15%;
+            height: 100%;
+            background: black;
+        }
+        .footer{
+            background-color: orange;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding-bottom : 30px;            
+            width: 100%;
+            overflow: hidden;
+        }
+
+
+    </style>
+
+    <body>
+        <header>
+            <div class="page-header", style="background-image: linear-gradient(to right, green , white);color:white">
+                <div>
+                    <h1>Logement Eco-Responsable</h1>
+                    <h2>Tableau de bord du logement connecté</h2>
+                </div>
+            </div>
+        </header>
+        <section id="container">
+            <div class="wrapper">
+                <!-- Sidebar -->
+                <nav id="sidebar">
+                    <div class="sidebar-header">
+                        <h3>Menu</h3>
+                    </div>
+
+                    <ul class="list-unstyled components">
+                        <!--<p>Menu de navigation</p>-->
+                        <li>
+                            <a id="Zbree1" href="#">Dashboard</a>
+                        </li>
+                        <li>
+                            <a id="Zbree2" href="#">Consommation</a>
+                        </li>
+                        <li>
+                            <a id="Zbree3" href="#">Etat des capteurs</a>
+                        </li>
+                        <li>
+                            <a id="Zbree4" href="#">Configuration</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <script src="site_behave.js"></script>
+
+            <div id="include">
+				Bienvenue ! Veuillez choisir un item sur le menu<br>
+			</div>
+        </section>
+    </body>
+        <footer class="page-footer font-small blue pt-4" style="background-image:linear-gradient(to bottom, orange , white); bottom: 0;width: 100%;">
+                <!-- Footer Links -->
+                <div class="container-fluid text-center text-md-left">
+                  <!-- Grid row -->
+                  <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-md-6 mt-md-0 mt-3">
+                      <!-- Content -->
+                        <h5 class="text-uppercase">Logement Eco-Responsable</h5>
+                        <p>Dans le cadre de notre TP d'IOT de dernière année, ce site web permet à un utilisateur d'avoir une interface des objets connectés de son logement. Il peut ainsi suivre ses consommations d'énergie pour faire des économies !</p>
+                      </div>
+                      <!-- Grid column -->
+                      <hr class="clearfix w-100 d-md-none pb-3">
+                      <!-- Grid column -->
+                      <div class="col-md-3 mb-md-0 mb-3">
+                             <!-- Links -->
+                          <h5 class="text-uppercase">Links</h5>
+                          <ul class="list-unstyled">
+                            <li>
+                              Polytech Sorbonne: <a href="https://www.polytech.upmc.fr/fr">Polytech Sorbonne</a>
+                            </li>
+                            <li>
+                              Sorbonne Université: <a href="https://www.sorbonne-universite.fr/">Sorbonne Université</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-3 mb-md-0 mb-3">
+                          <!-- Links -->
+                          <h5 class="text-uppercase">Authors</h5>
+                          <ul class="list-unstyled">
+                            <li>
+                              <a href="mailto:baotinhpiot@gmail.com">Bao Tinh Piot</a>
+                            </li>
+                            <li>
+                              <a href="mailto:marcolongepe@gmail.com">Marco Longépé</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                  </div>
+                  <!-- Footer Links -->
+            </footer>
+</html>
+
